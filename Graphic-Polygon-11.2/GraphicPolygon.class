@@ -1,0 +1,32 @@
+import apcslib.DrawingTool;
+import apcslib.SketchPad;
+public class GraphicPolygon extends RegularPolygon {
+	private DrawingTool pen = new DrawingTool(new SketchPad (400,400));
+	private double xpos =0.0;
+	private double ypos =0.0;
+	
+	public GraphicPolygon(int numSides, int sideLength){
+		super(numSides, sideLength);
+		xpos = 0;
+		ypos = 0;
+	}
+	
+	public GraphicPolygon(int numSides, int sideLength,double x, double y){
+		super(numSides, sideLength);
+		xpos = x;
+		ypos = y;
+	}
+	public void draw(){
+		pen.up();
+		pen.move(xpos, ypos);
+		pen.move(getApothem());
+		pen.turn(90);
+		pen.down();
+		pen.move(getSideLength()/2);
+		
+		for(int i = 0;i<getSide();i++){
+			pen.turn(180-angle());
+			pen.move(getSideLength());
+		}
+	}
+}
