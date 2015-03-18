@@ -1,0 +1,38 @@
+public class RegularPolygon {
+
+	private double SideLength;
+	private int NumSides;
+	
+	public RegularPolygon(){
+		SideLength = 0;
+		NumSides = 0;
+	}
+	public RegularPolygon(int side, double length){
+		NumSides = side;
+		SideLength = length;
+	}
+	public double getApothem(){
+		return ((SideLength*.5)*(1/Math.tan(Math.PI/(double)NumSides)));
+	}
+	public double getRadius(){
+		return ((.5*SideLength)/Math.cos(angle));
+	}
+	public double getPerimeter(){
+		return SideLength*NumSides;
+	}
+	public double getArea(){
+		double area = .5*NumSides*Math.pow(Apothem, 2)*Math.sin((2*Math.PI)/NumSides);
+		return area;
+	}
+	public double getSideLength(){
+		return SideLength;
+	}
+	public double getSide(){
+		return NumSides;
+	}
+	public double angle(){
+		return ((double)(NumSides-2)/((double)(NumSides)))*180;
+	}
+	
+	
+}
