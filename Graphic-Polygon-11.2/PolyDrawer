@@ -1,0 +1,6 @@
+public class polydrawer {
+public static void main(String[] args){
+	GraphicPolygon poly = new GraphicPolygon(9,100);
+	poly.draw();
+  }
+}
